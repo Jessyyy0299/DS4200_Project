@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combined D3 and Vega Embeds</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
     <style>
         .axis-label {
             font-family: sans-serif;
@@ -49,11 +48,11 @@
         <strong>Insight:</strong> Higher covariance values for red wines in categories such as <em>fixed acidity_ratio</em> suggest a stronger association between these factors and wine quality. White wines, in contrast, tend to show higher covariance in <em>free sulfur dioxide_ratio</em>, indicating that sulfur compounds may impact white wine quality differently. These results suggest that red and white wines are influenced by quality factors in unique ways.
     </div>
 
-    <!-- Section for the D3 plot -->
-    <svg width="1000" height="1000"></svg>
-
-    <!-- Link to the external D3 JavaScript file -->
-    <script src="covariance.js"></script>
+    <!-- Embedding the D3 HTML file -->
+    <div class="iframe-container">
+        <h2 class="title">Covariance Analysis - D3 Plot</h2>
+        <iframe src="Covariance Folder/d3_cov.html" width="100%" height="500px" style="border: none;"></iframe>
+    </div>
 
     <!-- Interpretation for Sustainability Analysis - Alcohol -->
     <div class="interpretation">
@@ -66,7 +65,7 @@
     <!-- Embedding the first HTML file -->
     <div class="iframe-container">
         <h2 class="title">Sustainability Analysis - Alcohol</h2>
-        <iframe src="sustainability_alcohol.html" width="100%" height="500px" style="border: none;"></iframe>
+        <iframe src="Sustainability Folder/sustainability_alcohol.html" width="100%" height="500px" style="border: none;"></iframe>
     </div>
 
     <!-- Interpretation for Sustainability Analysis - Sulphates -->
@@ -80,11 +79,8 @@
     <!-- Embedding the second HTML file -->
     <div class="iframe-container">
         <h2 class="title">Sustainability Analysis - Sulphates</h2>
-        <iframe src="sustainability_sulphate.html" width="100%" height="500px" style="border: none;"></iframe>
+        <iframe src="Sustainability Folder/sustainability_sulphate.html" width="100%" height="500px" style="border: none;"></iframe>
     </div>
 
 </body>
 </html>
-
-
-
