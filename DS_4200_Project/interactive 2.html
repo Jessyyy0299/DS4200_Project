@@ -36,7 +36,7 @@
             flex-direction: column;
             align-items: center;
         }
-        #toggleSlider {
+        #toggleQualitySlider {
             padding: 10px;
             margin: 10px;
             border: none;
@@ -58,7 +58,7 @@
             <option value="">Select Feature</option>
         </select>
     </div>
-    <button id="toggleSlider" onclick="toggleSliderVisibility()">Toggle Slider for Wine Quality</button>
+    <button id="toggleSlider" onclick="toggleQualitySliderVisibility()">Show/Hide Wine Quality Filter</button>
     <div id="sliderContainer">
         <label for="qualitySlider">Select Wine Quality Level (3-9):</label>
         <input type="range" id="qualitySlider" min="3" max="9" value="7" step="1" oninput="updateQualityLabel(this.value)" onchange="filterDataByQuality()">
@@ -186,7 +186,7 @@
             wineChart.update();
         }
 
-        function toggleSliderVisibility() {
+        function toggleQualitySliderVisibility() {
             const sliderContainer = document.getElementById('sliderContainer');
             sliderContainer.style.display = sliderContainer.style.display === 'none' ? 'flex' : 'none';
         }
