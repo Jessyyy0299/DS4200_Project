@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Scoring Wine Comparison</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        #chartContainer {
+            width: 80%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+        .btn-group {
+            margin-top: 20px;
+        }
+        select {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>High-Scoring Red vs. White Wine Comparison</h1>
+    <p>Select a feature below to compare different aspects of high-scoring red and white wines as a stacked bar chart.</p>
+    <div class="btn-group" id="dropdownContainer">
+        <select id="featureDropdown" onchange="updateChart(this.value)">
+            <option value="">Select Feature</option>
+        </select>
+    </div>
+    <div id="chartContainer">
+        <canvas id="wineChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script>
+        let wineData = { red: {}, white: {} };
+
+        // Function to create dropdown options for each feature dynamically
+        function createDropdown(features) {
+            const dropdown = document.getElementById('featureDropdown');
+            features.forEach(feature => {
+                let option = document.createElement('option');
+                option.value = feature;
+                option.textContent = feature;
+                dropdown.appendChild(option);
+            });
+        }
+
+        // Parse CSV file and load data
+        Papa.parse("combined_wine_quality.csv", {
+            download: true,
+            header: true,
+            complete: function (results) {
+                let data = results.data;
+                // Segregate red and white wine data
+                let redData = data.filter(d => d.type === 'red');
+                let whiteData = data.filter(d => d.type === 'white');
+                let features = Object.keys(redData[0]).filter(key => key !== 'type' && key !== 'quality');
+
+                features.forEach(feature => {
+                    wineData.red[feature] = redData.map(d => parseFloat(d[feature]));
+                    wineData.white[feature] = whiteData.map(d => parseFloat(d[feature]));
+                });
+
+                createDropdown(features);
+                updateChart(features[0]);
+            }
+        });
+
+        let ctx = document.getElementById('wineChart').getContext('2d');
+        let wineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: []
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Wine Feature'
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage'
+                        }
+                    }
+                }
+            }
+        });
+
+        function updateChart(feature) {
+            if (!feature) return;
+            // Calculate percentages for Low, Medium, High
+            const calculatePercentages = (data) => {
+                let low = 0, medium = 0, high = 0;
+                data.forEach(value => {
+                    if (value < 4) {
+                        low++;
+                    } else if (value < 8) {
+                        medium++;
+                    } else {
+                        high++;
+                    }
+                });
+                const total = data.length;
+                return [
+                    (low / total) * 100,
+                    (medium / total) * 100,
+                    (high / total) * 100
+                ];
+            }
+
+            const redPercentages = calculatePercentages(wineData.red[feature]);
+            const whitePercentages = calculatePercentages(wineData.white[feature]);
+
+            wineChart.data = {
+                labels: ['Low', 'Medium', 'High'],
+                datasets: [
+                    {
+                        label: 'Red Wine',
+                        data: redPercentages,
+                        backgroundColor: 'rgba(255, 99, 132, 0.7)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'White Wine',
+                        data: whitePercentages,
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            };
+
+            wineChart.update();
+        }
+    </script>
+</body>
+</html>
