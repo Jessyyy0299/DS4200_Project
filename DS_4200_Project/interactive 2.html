@@ -23,12 +23,30 @@
         .btn-group {
             margin-top: 20px;
         }
-        select {
+        select, input[type="range"] {
             padding: 10px;
             margin: 5px;
             border: 1px solid #4CAF50;
             border-radius: 5px;
             cursor: pointer;
+        }
+        #sliderContainer {
+            margin-top: 20px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+        #toggleSlider {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #toggleSlider:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
@@ -40,6 +58,12 @@
             <option value="">Select Feature</option>
         </select>
     </div>
+    <button id="toggleSlider" onclick="toggleSliderVisibility()">Toggle Slider for Wine Quality</button>
+    <div id="sliderContainer">
+        <label for="qualitySlider">Select Wine Quality Level (3-9):</label>
+        <input type="range" id="qualitySlider" min="3" max="9" value="7" step="1" oninput="updateQualityLabel(this.value)" onchange="filterDataByQuality()">
+        <span id="qualityLabel">7</span>
+    </div>
     <div id="chartContainer">
         <canvas id="wineChart"></canvas>
     </div>
@@ -47,6 +71,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script>
         let wineData = { red: {}, white: {} };
+        let originalData = { red: [], white: [] };
+        let filteredData = { red: [], white: [] };
 
         // Function to create dropdown options for each feature dynamically
         function createDropdown(features) {
@@ -68,13 +94,11 @@
                 // Segregate red and white wine data
                 let redData = data.filter(d => d.type === 'red');
                 let whiteData = data.filter(d => d.type === 'white');
+                originalData.red = redData;
+                originalData.white = whiteData;
                 let features = Object.keys(redData[0]).filter(key => key !== 'type' && key !== 'quality');
 
-                features.forEach(feature => {
-                    wineData.red[feature] = redData.map(d => parseFloat(d[feature]));
-                    wineData.white[feature] = whiteData.map(d => parseFloat(d[feature]));
-                });
-
+                filterDataByQuality();
                 createDropdown(features);
                 updateChart(features[0]);
             }
@@ -136,8 +160,8 @@
                 ];
             }
 
-            const redPercentages = calculatePercentages(wineData.red[feature]);
-            const whitePercentages = calculatePercentages(wineData.white[feature]);
+            const redPercentages = calculatePercentages(filteredData.red.map(d => parseFloat(d[feature])));
+            const whitePercentages = calculatePercentages(filteredData.white.map(d => parseFloat(d[feature])));
 
             wineChart.data = {
                 labels: ['Low', 'Medium', 'High'],
@@ -160,6 +184,27 @@
             };
 
             wineChart.update();
+        }
+
+        function toggleSliderVisibility() {
+            const sliderContainer = document.getElementById('sliderContainer');
+            sliderContainer.style.display = sliderContainer.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        function updateQualityLabel(value) {
+            document.getElementById('qualityLabel').textContent = value;
+        }
+
+        function filterDataByQuality() {
+            const selectedQuality = parseInt(document.getElementById('qualitySlider').value);
+            filteredData.red = originalData.red.filter(d => parseInt(d.quality) >= selectedQuality);
+            filteredData.white = originalData.white.filter(d => parseInt(d.quality) >= selectedQuality);
+
+            // Update the chart with the filtered data
+            const selectedFeature = document.getElementById('featureDropdown').value;
+            if (selectedFeature) {
+                updateChart(selectedFeature);
+            }
         }
     </script>
 </body>
