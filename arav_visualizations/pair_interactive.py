@@ -4,13 +4,10 @@ import plotly.express as px
 
 wine_data = pd.read_csv("./data/combined_wine_quality.csv")
 
-# Initialize the Dash app
 app = Dash(__name__)
 
-# Get a list of numerical columns for selection
 columns = wine_data.select_dtypes(include="number").columns
 
-# Layout of the app
 app.layout = html.Div(
     [
         html.H1(
@@ -25,7 +22,7 @@ app.layout = html.Div(
                         dcc.Dropdown(
                             id="x-axis",
                             options=[{"label": col, "value": col} for col in columns],
-                            value="pH",  # default value
+                            value="pH",
                             clearable=False,
                         ),
                     ],
@@ -37,7 +34,7 @@ app.layout = html.Div(
                         dcc.Dropdown(
                             id="y-axis",
                             options=[{"label": col, "value": col} for col in columns],
-                            value="citric acid",  # default value
+                            value="citric acid",
                             clearable=False,
                         ),
                     ],
@@ -50,7 +47,6 @@ app.layout = html.Div(
 )
 
 
-# Callback to update the plot based on selected variables
 @app.callback(
     Output("scatter-hex-plot", "figure"),
     [Input("x-axis", "value"), Input("y-axis", "value")],
@@ -69,5 +65,8 @@ def update_plot(x_axis, y_axis):
     return fig
 
 
-# Run the app
-app.run_server(debug=False, port=8050, host="0.0.0.0")
+if __name__ == "__main__":
+    # Save the HTML file first
+    app.write_html("./arav_visualizations/pair_interactive_site.html")
+    # Then run the server
+    app.run_server(debug=False, port=8050, host="0.0.0.0")

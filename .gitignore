@@ -50,3 +50,6 @@ docs/_build/
 pip-log.txt
 pip-delete-this-directory.txt
 
+# Generated HTML files
+*_site.html
+

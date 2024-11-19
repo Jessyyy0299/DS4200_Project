@@ -70,4 +70,8 @@ def update_plot(property_name):
     return fig
 
 
-app.run_server(debug=False, port=8051, host="0.0.0.0")
+if __name__ == "__main__":
+    # Save the HTML file first
+    app.write_html("./arav_visualizations/cost_reduction_site.html")
+    # Then run the server
+    app.run_server(debug=False, port=8051, host="0.0.0.0")
