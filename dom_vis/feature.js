@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.getElementById('featureDropdown');
 
     // Load data
-    Papa.parse("dom_vis/combined_wine_quality.csv", {
+    Papa.parse("combined_wine_quality.csv", {
         download: true,
         header: true,
         complete: function (results) {
