@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wine Quality Dataset Interactive Visualization</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Wine Quality Dataset Interactive Visualization</h1>
+        <div class="controls">
+            <div>
+                <label>Select X-axis Variable:</label>
+                <select id="x-axis"></select>
+            </div>
+            <div>
+                <label>Select Y-axis Variable:</label>
+                <select id="y-axis"></select>
+            </div>
+        </div>
+        <div class="chart-container" id="scatter-hex-plot"></div>
+    </div>
+    <script src="static/pair_interactive.js"></script>
+</body>
+</html> 
