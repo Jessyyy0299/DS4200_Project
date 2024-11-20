@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Scoring Wine Comparison</title>
+    <link rel="stylesheet" href="feature.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="feature.js" defer></script>
+</head>
+<body>
+    <h2 class="title">High-Scoring Wine Comparison</h2>
+    <p>Select a feature below to compare different aspects of high-scoring red and white wines as a stacked bar chart.</p>
+    
+    <div class="btn-group" id="dropdownContainer">
+        <select id="featureDropdown">
+            <option value="">Select Feature</option>
+        </select>
+    </div>
+    
+    <button id="toggleQualitySlider">Show/Hide Wine Quality Filter</button>
+    
+    <div id="sliderContainer">
+        <label for="qualitySlider">Select Wine Quality Level (3-9):</label>
+        <input type="range" id="qualitySlider" min="3" max="9" value="7" step="1">
+        <span id="qualityLabel">7</span>
+    </div>
+    
+    <div id="chartContainer">
+        <canvas id="wineChart"></canvas>
+    </div>
+</body>
+</html>
+
