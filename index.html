@@ -7,70 +7,30 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="title">VisualSommelier: Uncorking Wine Quality Through Data</h1>
-
-    <!-- Embedding Arav's interactive HTML file -->
-        <div class="iframe-container">
-            <h2 class="title"> pair Analysis</h2>
-            <iframe src="arav_vis/pair_interactive.html" width="100%" height="500px" style="border: none;"></iframe>
-        </div>
-    
-    <!-- Embedding Arav's interactive HTML file -->
-    <div class="iframe-container">
-        <h2 class="title"> cost-reduction Analysis</h2>
-        <iframe src="arav_vis/cost_reduction.html" width="100%" height="500px" style="border: none;"></iframe>
-    </div>
-
-    <!-- Embedding the D3 HTML file -->
-    <div class="iframe-container">
-        <h2 class="title">Covariance Analysis</h2>
-        <iframe src="Covariance Folder/d3_cov.html" width="100%" height="500px" style="border: none;"></iframe>
-    </div>
-
-    <!-- Interpretation for D3 Plot -->
-    <div class="interpretation">
-        <strong>Covariance Analysis Interpretation:</strong>
-        This analysis visualizes the covariance scores of different quality indicators for both red and white wines.
-    </div>
-
-    <!-- Embedding the Sustainability HTML file -->
-    <div class="iframe-container">
-        <h2 class="title">Sustainability Analysis</h2>
-        <iframe src="Sustainability Folder/sustainability_plot.html" width="100%" height="500px" style="border: none;"></iframe>
-    </div>
-
-    <!-- Interpretation for Sustainability Analysis -->
-    <div class="interpretation">
-        <strong>Sustainability Analysis Interpretation:</strong>
-        This analysis explores the relationship between alcohol content and various sustainability factors in red and white wines.
-    </div>
-
-    <!-- Static Heatmap Visualizations -->
-    <h2 class="title">Heatmap Analysis</h2>
-    <p>The following heatmaps represent the average quality of wines based on residual sugar and volatile acidity group.</p>
-
-    <div class="static-visuals">
-        <!-- Heatmap for Wine -->
-        <div class="iframe-container" style="width: 100%; margin: auto;">
-            <h3 style="font-size: 16px; text-align: center;">Heatmap of Average Quality</h3>
-            <img src="udita_vis/Heatmap.jpg" alt="Heatmap of Red Wine Average Quality" style="width: 100%; height: auto;">
-        </div>
-    </div>
-    
-    <!-- Link to Feature Comparison -->
-    <h2 class="title">High-Scoring Wine Comparison</h2>
-    <p>Explore feature comparisons for high-scoring red and white wines as an interactive bar chart.</p>
-    <div class="iframe-container">
-        <iframe src="dom_vis/feature.html" width="100%" height="600px" style="border: none;"></iframe>
-    </div>
-
-    <div class="static-visuals">
-        <!-- Sacrifice regression -->
-        <div class="heatmap-container">
-            <h3>Sacrifice regression</h3>
-            <img src="dom_vis/sacrifice.jpg" alt="Sacrifice regression without greatly impacting quality">
-        </div>
-    </div>
-
+    <header>
+        <h1 class="title">VisualSommelier: Uncorking Wine Quality Through Data</h1>
+        <nav class="menu">
+            <a href="index.html" class="active">Overview</a>
+            <a href="Interactive.html">Interactive Visualizations</a>
+            <a href="Static.html">Static Visualizations</a>
+            <a href="Contacts.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="content-box">
+            <section>
+                <p>The first objective of our project is to analyze the various attributes of wine that influence its quality, such as acidity, alcohol content, and other measurable chemical properties. Wine quality is often a subjective measure, but by focusing on objective data, we would like to uncover which factors most significantly impact the overall evaluation of wine. This analysis will help us understand the underlying science of what makes a wine "good" from a quality standpoint. By identifying these key attributes, we can offer valuable insights to winemakers who want to refine their production processes, as well as consumers looking to make more informed choices.</p>
+                <p>The second aim of our project is to explore and compare the key differences between red and white wines. While both types of wine share common characteristics, they differ significantly in their composition, flavor profiles, and the factors that determine their quality. By examining red and white wine separately, we aim to highlight the unique attributes that define each type, as well as how those attributes interact to affect the overall quality. This comparison will provide a more nuanced understanding of the distinctions between these two popular types of wine, offering insights into why certain wines appeal to different preferences and occasions.</p>
+                <p>
+                    <a href="https://linkinghub.elsevier.com/retrieve/pii/B012227055X012992" target="_blank">Wine tasting</a> This reference talks about a sensory-based rating system and explains that evaluating wine quality can actually be objective. Since our dataset includes a "quality" attribute, the criteria mentioned in the essay are relevant and closely linked to what we have. It also shows how things like acidity and alcohol levels can impact the quality, and the scoring system uses different weightings, which we can refer to in our analysis.
+                </p>
+                <p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/B9780123814685000117?via%3Dihub" target="_blank">Sensory Perception and Wine Assessment</a>, another article we found, helps us understand how different wine features affect the sensory experience, which can help explain the patterns we see in our feature data visualizations.
+                </p>        
+            </section>
+        
+    </main>
 </body>
 </html>
+
+

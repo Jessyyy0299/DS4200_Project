@@ -4,65 +4,78 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333333; /* Dark gray text */
+}
+
+header {
+    background-color: #2c3e50; /* Dark blue-gray for header */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff; /* White text */
 }
 
 .title {
-    text-align: center;
     font-size: 24px;
-    margin-top: 20px;
-    color: #4CAF50;
+    margin: 0;
 }
 
-/* Iframe Styles */
-.iframe-container {
-    margin: 20px auto;
-    width: 90%;
-    max-width: 1000px;
-}
-
-/* Interpretation Section */
-.interpretation {
-    font-size: 14px;
-    margin: 20px auto;
+nav.menu {
+    background-color: #2c3e50; /* Matches header color */
     padding: 10px;
-    background-color: #fff;
-    border-left: 4px solid #4CAF50;
-    max-width: 800px;
-}
-
-/* Static Visuals Section */
-.static-visuals {
-    margin: 20px auto;
-    max-width: 1000px;
     text-align: center;
 }
 
-.heatmap-container {
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.heatmap-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-.heatmap-container h3 {
+nav.menu a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
     font-size: 18px;
-    color: #4CAF50;
-    margin-bottom: 10px;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
 }
 
-/* Feature Comparison Section */
-.iframe-container iframe {
+nav.menu a:hover, nav.menu a.active {
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #34495e; /* Slightly lighter on hover */
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-box {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Overall container width */
+    text-align: center; /* Center text */
+}
+
+iframe {
+    width: 80%; /* Set iframe to 80% of the viewport width */
+    height: 500px;
+    border: none;
+    display: block;
+    margin: 0 auto; /* Center iframe */
+}
+
+.static-image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.static-image-container img {
+    max-width: 80%; /* Set static images to 80% of the viewport width */
+    height: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
