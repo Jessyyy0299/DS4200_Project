@@ -17,7 +17,7 @@
     
     <!-- Embedding Arav's interactive HTML file -->
     <div class="iframe-container">
-        <h2 class="title"> cost reduction Analysis</h2>
+        <h2 class="title"> cost-reduction Analysis</h2>
         <iframe src="arav_vis/cost_reduction.html" width="100%" height="500px" style="border: none;"></iframe>
     </div>
 
@@ -50,24 +50,27 @@
     <p>The following heatmaps represent the average quality of wines based on residual sugar and volatile acidity group.</p>
 
     <div class="static-visuals">
-        <!-- Heatmap for Red Wine -->
-        <div class="heatmap-container">
-            <h3>Heatmap of Average Quality (Red Wine)</h3>
-            <img src="udita_vis/heatmapred.jpg" alt="Heatmap of Red Wine Average Quality">
-        </div>
-
-        <!-- Heatmap for White Wine -->
-        <div class="heatmap-container">
-            <h3>Heatmap of Average Quality (White Wine)</h3>
-            <img src="udita_vis/heatmapwhite.jpg" alt="Heatmap of White Wine Average Quality">
+        <!-- Heatmap for Wine -->
+        <div class="iframe-container" style="width: 100%; margin: auto;">
+            <h3 style="font-size: 16px; text-align: center;">Heatmap of Average Quality</h3>
+            <img src="udita_vis/Heatmap.jpg" alt="Heatmap of Red Wine Average Quality" style="width: 100%; height: auto;">
         </div>
     </div>
-
+    
     <!-- Link to Feature Comparison -->
     <h2 class="title">High-Scoring Wine Comparison</h2>
     <p>Explore feature comparisons for high-scoring red and white wines as an interactive bar chart.</p>
     <div class="iframe-container">
         <iframe src="dom_vis/feature.html" width="100%" height="600px" style="border: none;"></iframe>
     </div>
+
+    <div class="static-visuals">
+        <!-- Sacrifice regression -->
+        <div class="heatmap-container">
+            <h3>Sacrifice regression</h3>
+            <img src="dom_vis/sacrifice.jpg" alt="Sacrifice regression without greatly impacting quality">
+        </div>
+    </div>
+
 </body>
 </html>
