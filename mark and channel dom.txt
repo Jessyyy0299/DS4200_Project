@@ -1,0 +1,17 @@
+For interactive:
+
+The marks in this visualization are the stacked bars, which represent different categories of feature levels (e.g. 'Low, Medium, High') for each type of wine.
+The channels used include color, height, and position.
+Colors are used to distinguish between red and white wines, while the height of each segment within the bars conveys the proportion of each level (e.g., low, medium, high).
+The position along the x-axis shows the feature being compared, allowing users to easily discern differences in feature values between wine types.
+The tasks of the visualization are to enable users to compare the distribution of feature levels between red and white wines, identify which features are more prominent in higher-quality wines, and explore the overall impact of these features on wine quality.
+By interacting with the dropdown, slider, and toggle button, users can effectively filter and compare different aspects of the data, gaining a deeper understanding of the factors influencing wine quality.
+
+
+For static:
+
+The marks are the bars that represent the regression line slopes for each wine category.
+The channels used include the height of the bars (representing the magnitude of the slope).
+The labels along the x-axis (representing different wine categories).
+The tasks for this visualization are to enable users to quickly compare the wine quality across different combinations of alcohol, pH, and volatile acidity.
+By analyzing the heights of the bars, users can determine which wine categories have stronger or weaker relationships between different combinations and quality, providing insights into how different combinations influence wine quality.

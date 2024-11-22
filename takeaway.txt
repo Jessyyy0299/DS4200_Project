@@ -1,0 +1,16 @@
+For interactive:
+
+The visualization presented here allows users analyze different features of high-scoring red and white wines using a stacked bar chart.
+The main takeaway is that it shows the relationship between specific features (e.g. acidity, alcohol content) and wine quality levels across red and white wines.
+Users can observe how the distribution of 'Low, Medium, High' levels of each feature impacts the quality of the wine, providing insights into the differences between red and white wine profiles. ps: The 'Low, Medium, High' level are spilt based on the 0-33%,33-66%,66-100%.
+For example, users can identify which features are more important in higher-quality red wines compared to white wines.
+The visualization includes three key interactions to enhance user experience: a dropdown selection for comparing different features, a range slider to filter the data by wine quality levels, and a button toggle to show or hide the quality filter.
+These interactions make it easy for users to explore the data in multiple ways, helping them uncover patterns and differences in how specific attributes affect the quality of red and white wines.
+
+
+For static:
+The static visualization shows the regression line slopes for each wine category, providing a clear comparison of how different combinations impacts wine quality.
+Each bar represents a unique combination of alcohol level, pH, and volatile acidity, and its height shows the slope of the regression line.
+The takeaway is that it allows users to easily determine which wine combination is beneficial and which might be negatively affected.
+This insight is valuable for winemakers and researchers seeking to optimize wine combination.
+By comparing the slopes, users can identify the categories to see which combination has the worst and best result, enabling more informed decisions in winemaking processes.
