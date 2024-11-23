@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Summary</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        .content-box {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        .content-box h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 class="title">VisualSommelier: Uncorking Wine Quality Through Data</h1>
+        <h1 class="title">Summary</h1>
         <nav class="menu">
             <a href="index.html">Overview</a>
             <a href="GeneralFeatures.html">General Features</a>
@@ -20,7 +34,9 @@
     <main>
         <section class="content-box">
             <h2>Summary</h2>
-            <p>The dataset and visualizations presented provide a comprehensive view of the factors influencing wine quality. By analyzing chemical properties, production costs, and red vs. white wine characteristics, this project offers insights for winemakers to optimize quality and sustainability...</p>
+            <p>The data visualizations reveal some insightful findings into the interplay between sustainability measures and wine quality. For both red and white wines, <b>pH</b> and <b>free sulfur dioxide (SO₂)</b> are essential attributes for maintaining high quality when reducing alcohol and sulfate levels. Red wines benefit from <b>density</b> to compensate for reduced alcohol, while white wines rely on <b>residual sugar</b> for balance and complexity. Additionally, volatile acidity plays a pivotal role, with optimal ranges (0.6–0.9) associated with high quality for both types. Beyond these shared and distinct attributes, red wines show greater variability in quality across feature ratios, requiring stricter chemical management, whereas white wines demonstrate greater stability.</p>
+            <p>The visualizations emphasize the importance of maintaining mid-range chemical properties to optimize quality and reduce costs. For example, sulfur dioxide levels between <b>20–50 mg/L</b> consistently produce higher-quality wines while minimizing excessive use, which would increase costs without added benefits. Non-linear relationships between variables like volatile acidity and alcohol further highlight the need for contextual adjustments, as extreme values are often detrimental to quality. Our heatmaps, regression analyses, and interactive plots underscore that balanced ranges lead to more predictable and consistent outcomes, allowing producers to optimize both sustainability and cost efficiency.</p>
+            <p>Looking ahead, winemakers should invest in precision monitoring systems to track critical variables such as volatile acidity, residual sugar, and SO₂ during production. Advanced modeling tools could help predict quality outcomes under different conditions, enabling dynamic adjustments for sustainable practices. Experimenting with reduced alcohol and sulfate levels paired with optimized pH, density, and residual sugar will further refine these strategies. Finally, aligning findings with consumer preferences and conducting cost-benefit analyses will ensure that sustainability measures not only improve wine quality but also meet market demands efficiently.</p>
         </section>
     </main>
 </body>

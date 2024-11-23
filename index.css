@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #2c3e50; /* Dark blue-gray for header */
+    background-color: #7b1f29; /* Dark wine red for header */
     padding: 20px;
     text-align: center;
     color: #ffffff; /* White text */
@@ -21,7 +21,7 @@ header {
 }
 
 nav.menu {
-    background-color: #2c3e50; /* Matches header color */
+    background-color: #7b1f29; /* Matches header color */
     padding: 10px;
     text-align: center;
 }
@@ -39,7 +39,7 @@ nav.menu a {
 nav.menu a:hover, nav.menu a.active {
     border: 2px solid #ffffff;
     border-radius: 5px;
-    background-color: #34495e; /* Slightly lighter on hover */
+    background-color: #8b2a33; /* Slightly lighter wine red on hover */
 }
 
 main {
@@ -78,4 +78,3 @@ iframe {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
