@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Features</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">General Features</h1>
+        <nav class="menu">
+            <a href="index.html">Overview</a>
+            <a href="GeneralFeatures.html" class="active">General Features</a>
+            <a href="RedVsWhite.html">Red vs White</a>
+            <a href="Summary.html">Summary</a>
+            <a href="Contacts.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="content-box">
+            <h2>Pair Analysis</h2>
+            <iframe src="arav_vis/pair_interactive.html" style="width: 100%; height: 600px;"></iframe>
+            <p>The visualization reveals several key insights about wine quality relationships by showing the relationship between any two variables in the dataset. Analysis of density versus quality shows a distinct concentration of wines within a narrow density range (0.990-1.000), suggesting that this range results in higher quality wines. Higher quality wines (7-8) consistently cluster in the middle density ranges, while extreme density values are typically associated with lower quality scores. Through interactive exploration, the visualization uncovers that many wine chemical properties have non-linear relationships with quality. This interactive capability enables the discovery of unexpected relationships, such as the notable negative correlation between volatile acidity and wine quality. It is also noted that other variables like alcohol tend to have incredibly strong positive correlations with wine quality overall.</p>
+
+            <h2>Cost-Reduction Analysis</h2>
+            <iframe src="arav_vis/cost_reduction.html" style="width: 100%; height: 600px;"></iframe>
+            <p>The visualization provides crucial insights into optimal chemical properties for wine production, with significant implications for cost reduction. Analysis of free sulfur dioxide reveals an optimal range (20-50 mg/L) that consistently correlates with higher quality wines, suggesting that producers can avoid excessive sulfur dioxide usage without compromising quality. This finding has direct cost implications, as maintaining sulfur dioxide levels within this optimal range rather than higher levels can reduce production costs while maintaining wine quality. A clear pattern emerges showing that extreme values of chemical properties generally correspond to lower quality scores, indicating that excessive use of additives like sulfur dioxide not only increases costs but may actually harm wine quality. The distribution of quality scores shows significant variation across different chemical ranges, with mid-ranges typically exhibiting more balanced quality distributions, while extreme ranges tend to show skewed distributions toward lower qualities. This pattern proves particularly valuable for cost-efficient production optimization, as producers can save money by targeting these "sweet spot" ranges rather than using excessive amounts of chemical additives. The data suggests that increasing sulfur dioxide beyond the optimal range provides no quality benefits while increasing production costs, making it an inefficient use of resources.</p>
+
+            <h2>Sacrifice Regression Analysis</h2>
+            <img src="dom_vis/sacrifice.jpg" style="width: 80%; display: block; margin: 0 auto;" alt="Sacrifice regression">
+            <p>The static visualization shows the regression line slopes for each wine category, providing a clear comparison of how different combinations impacts wine quality. Each bar represents a unique combination of alcohol level, pH, and volatile acidity, and its height shows the slope of the regression line. The takeaway is that it allows users to easily determine which wine combination is beneficial and which might be negatively affected. This insight is valuable for winemakers and researchers seeking to optimize wine combination. By comparing the slopes, users can identify the categories to see which combination has the worst and best result, enabling more informed decisions in winemaking processes.</p>
+        </section>
+    </main>
+</body>
+</html>
+
+
+

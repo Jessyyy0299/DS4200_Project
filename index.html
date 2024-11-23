@@ -5,32 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wine Project</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add styles for horizontal alignment */
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Space between the boxes */
+            margin: 20px 0;
+        }
+        .content-box {
+            flex: 1;
+            min-width: 45%; /* Ensures each box takes about half the width */
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content-box h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1 class="title">VisualSommelier: Uncorking Wine Quality Through Data</h1>
         <nav class="menu">
             <a href="index.html" class="active">Overview</a>
-            <a href="Interactive.html">Interactive Visualizations</a>
-            <a href="Static.html">Static Visualizations</a>
+            <a href="GeneralFeatures.html">General Features</a>
+            <a href="RedVsWhite.html">Red vs White</a>
+            <a href="Summary.html">Summary</a>
             <a href="Contacts.html">Contact</a>
         </nav>
     </header>
     <main>
-        <section class="content-box">
-            <section>
+        <div class="content-container">
+            <section class="content-box">
+                <h2>Introduction</h2>
                 <p>The first objective of our project is to analyze the various attributes of wine that influence its quality, such as acidity, alcohol content, and other measurable chemical properties. Wine quality is often a subjective measure, but by focusing on objective data, we would like to uncover which factors most significantly impact the overall evaluation of wine. This analysis will help us understand the underlying science of what makes a wine "good" from a quality standpoint. By identifying these key attributes, we can offer valuable insights to winemakers who want to refine their production processes, as well as consumers looking to make more informed choices.</p>
                 <p>The second aim of our project is to explore and compare the key differences between red and white wines. While both types of wine share common characteristics, they differ significantly in their composition, flavor profiles, and the factors that determine their quality. By examining red and white wine separately, we aim to highlight the unique attributes that define each type, as well as how those attributes interact to affect the overall quality. This comparison will provide a more nuanced understanding of the distinctions between these two popular types of wine, offering insights into why certain wines appeal to different preferences and occasions.</p>
+            </section>
+            <section class="content-box">
+                <h2>Sources</h2>
                 <p>
-                    <a href="https://linkinghub.elsevier.com/retrieve/pii/B012227055X012992" target="_blank">Wine tasting</a> This reference talks about a sensory-based rating system and explains that evaluating wine quality can actually be objective. Since our dataset includes a "quality" attribute, the criteria mentioned in the essay are relevant and closely linked to what we have. It also shows how things like acidity and alcohol levels can impact the quality, and the scoring system uses different weightings, which we can refer to in our analysis.
+                    <a href="https://linkinghub.elsevier.com/retrieve/pii/B012227055X012992" target="_blank">Wine tasting</a>, this reference talks about a sensory-based rating system and explains that evaluating wine quality can actually be objective. Since our dataset includes a "quality" attribute, the criteria mentioned in the essay are relevant and closely linked to what we have. It also shows how things like acidity and alcohol levels can impact the quality, and the scoring system uses different weightings, which we can refer to in our analysis.
                 </p>
                 <p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/B9780123814685000117?via%3Dihub" target="_blank">Sensory Perception and Wine Assessment</a>, another article we found, helps us understand how different wine features affect the sensory experience, which can help explain the patterns we see in our feature data visualizations.
-                </p>        
+                    <a href="https://www.sciencedirect.com/science/article/pii/B9780123814685000117?via%3Dihub" target="_blank">Sensory Perception and Wine Assessment</a>, this article helps us understand how different wine features affect the sensory experience, which can help explain the patterns we see in our feature data visualizations.
+                </p>
             </section>
-        
+        </div>
     </main>
 </body>
 </html>
+
+
+
 
 
