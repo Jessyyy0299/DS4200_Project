@@ -8,22 +8,27 @@ body {
     color: #333333; /* Dark gray text */
 }
 
-header {
-    background-color: #7b1f29; /* Dark wine red for header */
-    padding: 20px;
-    text-align: center;
-    color: #ffffff; /* White text */
-}
-
-.title {
-    font-size: 24px;
-    margin: 0;
-}
-
+/* Navigation Menu Styling */
 nav.menu {
     background-color: #7b1f29; /* Matches header color */
-    padding: 10px;
-    text-align: center;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 15px 30px; /* Add left and right padding for spacing */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav.menu span.title {
+    color: #ffffff; /* White text */
+    font-size: 26px; /* Larger size for the title */
+    font-family: 'Georgia', serif; /* Different font style */
+    font-weight: bold; /* Bold font */
+    margin-right: 100px; /* Space between the title and links */
+    text-transform: none; /* Ensure text is not capitalized */
 }
 
 nav.menu a {
@@ -31,23 +36,28 @@ nav.menu a {
     color: #ffffff; /* White text */
     font-size: 18px;
     margin: 0 15px;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border: 2px solid transparent;
-    transition: all 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s, border 0.3s;
 }
 
 nav.menu a:hover, nav.menu a.active {
-    border: 2px solid #ffffff;
-    border-radius: 5px;
     background-color: #8b2a33; /* Slightly lighter wine red on hover */
+    border: 2px solid #ffffff;
 }
 
-main {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+/* Add padding to avoid overlapping with the fixed nav */
+body {
+    padding-top: 80px; /* Adjust for the height of the menu */
 }
 
+/* Add padding to avoid overlapping with the fixed nav */
+body {
+    padding-top: 70px; /* Match the height of the navigation menu */
+}
+
+/* Section Styling */
 .content-box {
     background-color: #ffffff; /* White background */
     padding: 20px;
@@ -78,3 +88,4 @@ iframe {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+

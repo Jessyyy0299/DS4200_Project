@@ -29,16 +29,15 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 class="title">VisualSommelier: Uncorking Wine Quality Through Data</h1>
-        <nav class="menu">
-            <a href="index.html" class="active">Overview</a>
-            <a href="GeneralFeatures.html">General Features</a>
-            <a href="RedVsWhite.html">Red vs White</a>
-            <a href="Summary.html">Summary</a>
-            <a href="Contacts.html">Contact</a>
-        </nav>
-    </header>
+    <nav class="menu">
+        <span class="title">Visual Sommelier</span>
+        <a href="index.html" class="active">Overview</a>
+        <a href="GeneralFeatures.html">General Features</a>
+        <a href="RedVsWhite.html">Red vs White</a>
+        <a href="Summary.html">Summary</a>
+        <a href="Contacts.html">Contact</a>
+    </nav>    
+
     <main>
         <div class="content-container">
             <section class="content-box">
@@ -49,7 +48,7 @@
 
             <section class="content-box">
                 <h2>Dataset</h2>
-                <p>The dataset for this analysis combines two files: one containing wine quality data for red wine and the other for white wine. The red wine dataset includes "1,599 records", and the white wine dataset contains "4,898 records", resulting in a combined total of "6,497 entries". “oth datasets share 12 original attributes, including physicochemical properties such as "volatile acidity", "residual sugar", "alcohol content", and "pH", along with a "quality rating" on a scale from 0 to 10. During data preparation, we added two derived columns: "volatile_acidity_group" and "residual_sugar_group", which categorize continuous variables into meaningful ranges to facilitate trend analysis. Data cleaning included creating these categories, ensuring consistency, and removing duplicates. While the dataset provides valuable insights into the relationship between wine characteristics and quality, it lacks additional details like "grape variety", "region of production", and "specific fermentation techniques", which could offer a more nuanced understanding of wine quality.</p>
+                <p><a href="https://archive.ics.uci.edu/dataset/186/wine+quality" target="_blank">Dataset for this analysis</a> combines two files: one containing wine quality data for red wine and the other for white wine. The red wine dataset includes "1,599 records", and the white wine dataset contains "4,898 records", resulting in a combined total of "6,497 entries". <a href="dom_vis/combined_wine_quality.csv">Both datasets</a> share 12 original attributes, including physicochemical properties such as "volatile acidity", "residual sugar", "alcohol content", and "pH", along with a "quality rating" on a scale from 0 to 10. During data preparation, we added many derived columns such as "volatile_acidity_group" and "residual_sugar_group", which categorize continuous variables into meaningful ranges to facilitate trend analysis. Data cleaning included creating these categories, ensuring consistency, and removing duplicates. While the dataset provides valuable insights into the relationship between wine characteristics and quality, it lacks additional details like "grape variety", "region of production", and "specific fermentation techniques", which could offer a more nuanced understanding of wine quality.</p>
             </section>
 
             <section class="content-box">
