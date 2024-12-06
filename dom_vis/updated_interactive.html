@@ -158,73 +158,47 @@ function updateChart(feature) {
             (medium / total) * 100,
             (high / total) * 100
         ];
-    }
+    };
 
     const redPercentages = calculatePercentages(filteredData.red.map(d => parseFloat(d[feature])));
     const whitePercentages = calculatePercentages(filteredData.white.map(d => parseFloat(d[feature])));
 
-    // Update the chart data with separated stacked bars for red and white wines
-    wineChart.data = {
-        labels: [feature],  // Set the X-axis label dynamically based on selected feature
-        datasets: [
-            // Red Wine Data
-            {
-                label: 'Red Wine - Low',
-                data: [redPercentages[0]],
-                backgroundColor: 'rgba(255, 99, 132, 0.7)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                stack: 'Red'
-            },
-            {
-                label: 'Red Wine - Medium',
-                data: [redPercentages[1]],
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                stack: 'Red'
-            },
-            {
-                label: 'Red Wine - High',
-                data: [redPercentages[2]],
-                backgroundColor: 'rgba(255, 99, 132, 0.3)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                stack: 'Red'
-            },
-            // White Wine Data
-            {
-                label: 'White Wine - Low',
-                data: [whitePercentages[0]],
-                backgroundColor: 'rgba(54, 162, 235, 0.7)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                stack: 'White'
-            },
-            {
-                label: 'White Wine - Medium',
-                data: [whitePercentages[1]],
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                stack: 'White'
-            },
-            {
-                label: 'White Wine - High',
-                data: [whitePercentages[2]],
-                backgroundColor: 'rgba(54, 162, 235, 0.3)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                stack: 'White'
-            }
-        ]
-    };
+    // Update the chart data with fixed static X-axis labels
+    wineChart.data.labels = ['Red Wine', 'White Wine'];
 
-    // Update X-axis label dynamically based on the selected feature
-    wineChart.options.scales.x.title.text = feature;
+    wineChart.data.datasets = [
+        // Low Data
+        {
+            label: 'Low',
+            data: [redPercentages[0], whitePercentages[0]],
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        },
+        // Medium Data
+        {
+            label: 'Medium',
+            data: [redPercentages[1], whitePercentages[1]],
+            backgroundColor: 'rgba(255, 159, 64, 0.7)',
+            borderColor: 'rgba(255, 159, 64, 1)',
+            borderWidth: 1
+        },
+        // High Data
+        {
+            label: 'High',
+            data: [redPercentages[2], whitePercentages[2]],
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }
+    ];
+
+    // Update X-axis label to be static
+    wineChart.options.scales.x.title.text = 'Wine Type';
 
     wineChart.update();
 }
+
 
 
         function toggleQualitySliderVisibility() {
