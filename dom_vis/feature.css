@@ -1,14 +1,19 @@
-.title {
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
-
+#chartContainer {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
 .btn-group {
     margin-top: 20px;
 }
-
 select, input[type="range"] {
     padding: 10px;
     margin: 5px;
@@ -16,14 +21,12 @@ select, input[type="range"] {
     border-radius: 5px;
     cursor: pointer;
 }
-
 #sliderContainer {
     margin-top: 20px;
     display: none;
     flex-direction: column;
     align-items: center;
 }
-
 #toggleQualitySlider {
     padding: 10px;
     margin: 10px;
@@ -33,13 +36,6 @@ select, input[type="range"] {
     border-radius: 5px;
     cursor: pointer;
 }
-
-#toggleQualitySlider:hover {
+#toggleSlider:hover {
     background-color: #45a049;
-}
-
-#chartContainer {
-    width: 80%;
-    max-width: 1000px;
-    margin-top: 20px;
 }
